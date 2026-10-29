@@ -14,3 +14,33 @@ jobs:
           - name: Listar los archivos del repositorio
             run: |
               ls ${{ github.workspace }}
+
+  Preparar-Terraform-y-AWS:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout repository
+            uses: actions/checkout@v6
+          - name: Configurar AWS CLI
+            run: echo "Configur AWS CLI"
+          - name: Instalar Terraform
+            run: echo "Instalar Terraform"
+          - name: Inicializar Terraform
+            run: echo "Terraform init"
+  
+  Terraform-Plan:
+      runs-on: ubuntu-latest
+      steps:
+          - name: "Ejecutar Terraform Plan"
+            run: echo "Terraform plan"
+  
+  Terraform-Apply:
+      runs-on: ubuntu-latest
+      steps:
+          - name: "Ejecutar Terraform Apply"
+            run: echo "Terraform apply"
+
+  Verificar-Recursos-AWS:
+      runs-on: ubuntu-latest
+      steps:
+          - name: "Verificar recursos en AWS"
+            run: echo "Verificando la existencia de recursos desplegados"
